@@ -63,14 +63,20 @@ async function forecast() {
         sunrise.textContent = `${data.forecast.forecastday[0].astro.sunrise}`
         sunset.textContent = `${data.forecast.forecastday[0].astro.sunset}`
          let container = document.getElementById('container') 
-         container.innerhtml =" "
+         container.innerHTML =" "
         data.forecast.forecastday.forEach(element => {
             const card = document.createElement("div")
-            card.innerHTML = `<p>Date: ${element.date}</p>
-        <img src="${element.day.condition.icon}" alt="">
-        <p>Max Temperature: ${element.day.maxtemp_c} </p>
-        <p>Lowest Temperature: ${element.day.mintemp_c} </p>
-        <p>${element.day.condition.text}</p>`    
+             card.classList.add("forecastdiv")
+             let date = new Date(element.date)
+             let day = date.toLocaleDateString("en-US",{
+                weekday:"short"
+             })
+            card.innerHTML = `<p class="font">Day: ${day}</p>
+            <p class="font">Date: ${element.date}</p>
+        <img src="https:${element.day.condition.icon}" alt="">
+        <p class="font">Max Temperature: ${element.day.maxtemp_c} </p>
+        <p class="font">Lowest Temperature: ${element.day.mintemp_c} </p>
+        <p class="font">${element.day.condition.text}</p>`    
             container.appendChild(card) 
         });
         
