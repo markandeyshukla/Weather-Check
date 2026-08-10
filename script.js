@@ -11,6 +11,7 @@ let feelslike = document.getElementById("feelslike")
 let wind = document.getElementById("wind")
 let sunrise = document.getElementById("sunrise")
 let sunset = document.getElementById("sunset")
+let icontop=document.getElementById("icon-top")
 
 // async function weather(city) {
 //     try{
@@ -35,31 +36,42 @@ async function getforecast(city) {
         console.log(e.message)
     }
 }
-async function showweather() {
+// async function showweather(city) {
+//     try{
+//     //  let  city = cityinput.value
+//         // let data = await weather(city)
+//         let data = await getforecast(city)
+//         name.textContent =`${data.location.name}`
+//         state.textContent = `${data.location.region}`
+//         country.textContent =`${data.location.country}`    
+//         temp.textContent = `${data.current.temp_c}`
+//         condition.textContent = `${data.current.condition.text}`
+//         icon.src = `https:${data.current.condition.icon}`
+//         icontop.src = `https:${data.current.condition.icon}`
+//         wind.textContent =`${data.current.wind_kph}`
+//         humidity.textContent =`${data.current.humidity}`
+//         feelslike.textContent =`${data.current.feelslike_c}`
+//     }
+//     catch(e){
+//      console.log(e)
+//     }
+
+// }
+// state.textContent = `${element.day.maxtemp_c}`
+async function forecast(city) {
     try{
-     let  city = cityinput.value
-        // let data = await weather(city)
+        // const city = cityinput.value
         let data = await getforecast(city)
-        name.textContent =`${data.location.name}`
+         name.textContent =`${data.location.name}`
         state.textContent = `${data.location.region}`
         country.textContent =`${data.location.country}`    
         temp.textContent = `${data.current.temp_c}`
         condition.textContent = `${data.current.condition.text}`
         icon.src = `https:${data.current.condition.icon}`
+        icontop.src = `https:${data.current.condition.icon}`
         wind.textContent =`${data.current.wind_kph}`
         humidity.textContent =`${data.current.humidity}`
-        feelslike.textContent =`${data.current.feelslike_c}`
-    }
-    catch(e){
-     console.log(e)
-    }
-
-}
-// state.textContent = `${element.day.maxtemp_c}`
-async function forecast() {
-    try{
-        const city = cityinput.value
-        let data = await getforecast(city)
+        feelslike.textContent +=`${data.current.feelslike_c}`
         sunrise.textContent = `${data.forecast.forecastday[0].astro.sunrise}`
         sunset.textContent = `${data.forecast.forecastday[0].astro.sunset}`
          let container = document.getElementById('container') 
@@ -86,6 +98,12 @@ async function forecast() {
     }    
 }
 btn.addEventListener("click",()=>{
-       showweather()
+    const city =cityinput.value
+    //    showweather(city)
        forecast(city)
 })
+document.addEventListener("DOMContentLoaded",()=>{
+    // showweather("varanasi")
+    forecast("varanasi")
+}
+)

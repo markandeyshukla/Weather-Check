@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
-    <div>
-        <p id="name">City: </p>
-        <p id="state">State: </p>
-        <p id="country">Country: </p>
-        <p id="temp">Temperature: </p>
-        <img id="icon" alt="">
-        <p id="condition"></p>
-        <p id="wind">Wind Speed: </p>
-        <p id="humidity">Humidity: </p>
-        <p id="feelslike">Feels Like: </p>
-        <input type="text" id="city">
-        <button id="btn">Check</button>
-    </div>
-    <div>
-        <p id="sunrise">sunrise</p>
-        <p id="sunset">sunset</p>
-    </div>
-    <div id="container"></div>
+<div class="prime-div">
+    <div class="main-div">
+        <div class="first-div">
+            <div class="search-div">
+                <h1>Weather</h1>
+                <p>Get real-time weather updates for any location</p>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="city">
+                <button id="btn">Check</button>
+                </div>
+            </div>
+            <div class="img-div">
+                <img id="icon-top" alt="">
+                <h2>Check Weather</h2>
+            </div>
+        </div>
+        <div class="weather-main">
+            <div class="current-weather">
+                <div class="left-side-cur">
+                    <span id="name">City: </span>
+                    <span id="state">State: </span>
+                    <span id="country">Country: </span>
+                    <p id="temp">Temperature: </p>
+                    <img id="icon" alt="">
+                    <p id="condition"></p>
+                    <p id="feelslike">Feelslike: </p>
+                </div>
+                <div class="right-side-cur">
+                    <p id="sunrise">sunrise</p>
+                    <p id="sunset">sunset</p>
+                </div>
+            </div>
+            <div class="condition-weather">
+                <p id="temp">Temperature: </p>
+                <p id="humidity">Humidity: </p>
+                <p id="wind">Wind Speed: </p>
+                <p id="state">State: </p>
+            </div>
+        </div>
+        <div id="container"></div>
+    </div></div>
+
+
 
     <script src="script.js"></script>
 </body>
+
 </html>
