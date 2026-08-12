@@ -152,12 +152,20 @@ hr{
     align-items: center;
     background-color: aliceblue;
     border-radius: 0 10px 10px 0;
-    /* padding: 10px; */
+    padding: 10px;
     /* margin-top: 110px; */
  }
  .temper{
     font-size: medium;
     column-gap: 10px;
+    
+ }
+ #feelslike{
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
  }
  .box{
     gap: 15px;
@@ -170,7 +178,7 @@ hr{
     border-radius: 10px;
     height: 45px;
  }
- #tempf{
+ .tempf{
     font-size: 15px;
  }
  .right-side-sun{
@@ -196,7 +204,11 @@ hr{
 .font{
     margin: 2px;
 }
-
+@media (max-width:1080px){
+    .forecastdiv{
+        min-width: 110px;
+    }
+}
 @media (max-width:768px){
     .forecastdiv{
        min-width: 88px;
@@ -204,5 +216,96 @@ hr{
     .font{
         font-size:10px;
     }
+    .left-side-cur{
+        font-size: 11px;
+    }
+    .box{
+        gap: 5px;
+    padding: 8px;
+    height:29px;
+    border: none;
+    }
+    .temp {
+    font-size: 20px;
+}
+#icon {
+    width: 50px;
+    height: 50px;
+}
+.right-side-img{
+    width: 50px;
+}
+hr{
+    width: 112px;
+}
 
+.weather-main{
+    padding: 10px;
+}
+}
+@media (max-width:480px){
+    .forecastdiv{
+       min-width: 8px;
+       width: 40px;
+    }
+    .sunfont{
+        font-size: 10px;
+    }
+    #feelslike{
+        font-size: 10px;
+    }
+    .temper{
+        font-size: 12px;
+    }
+    .img-div{
+       display: none;
+    }
+    .search-div{
+        width: 100%;
+    }
+    .tempf{
+        font-size: 8px;
+}
+    .font{
+        font-size:7px;
+        text-align: center;
+    }
+    .cloudf{
+        width: 50px;
+        height: auto;
+    }
+    .left-side-cur{
+        font-size: 8px;
+    }
+    .box{
+        gap: 5px;
+    padding: 8px;
+    height:29px;
+    border: none;
+    }
+    .temp {
+    font-size: 20px;
+}
+#icon {
+    width: 50px;
+    height: 50px;
+}
+.right-side-img{
+    width: 40px;
+}
+hr{
+    width: 80px;
+}
+.condition-weather{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,30px);
+}
+.weather-main{
+    padding: 0px;
+    display: block;
+}
+.current-weather{
+    width: 100%;
+}
 }

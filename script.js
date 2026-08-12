@@ -2,7 +2,7 @@ let cityinput = document.getElementById("city")
 let name = document.getElementById("name")
 let state = document.querySelectorAll(".state")
 let country = document.getElementById("country")
-let temp = document.querySelectorAll(".temp")
+let temp = document.querySelectorAll(".tempe")
 let condition = document.getElementById("condition")
 let icon = document.getElementById("icon")
 let btn = document.getElementById("btn")
@@ -79,7 +79,7 @@ async function forecast(city) {
         icontop.src = `https:${data.current.condition.icon}`
         wind.textContent =`${data.current.wind_kph}`
         humidity.textContent =`${data.current.humidity}`
-        feelslike.innerHTML =`feelsLike: ${data.current.feelslike_c} &degC`
+        feelslike.innerHTML =`FeelsLike: ${data.current.feelslike_c} &degC`
         sunrise.textContent = `${data.forecast.forecastday[0].astro.sunrise}`
         sunset.textContent = `${data.forecast.forecastday[0].astro.sunset}`
         dates.textContent=`, ${data.forecast.forecastday[0].date}`
@@ -98,7 +98,7 @@ async function forecast(city) {
              })
             card.innerHTML = `<p class="font">${day}</p>
             <p class="font">${element.date}</p>
-        <img src="https:${element.day.condition.icon}" alt="">
+        <img class="cloudf" src="https:${element.day.condition.icon}" alt="">
         <p class="font">Max: ${element.day.maxtemp_c} </p>
         <p class="font">Min: ${element.day.mintemp_c} </p>
         <p class="font">${element.day.condition.text}</p>`    
