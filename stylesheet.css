@@ -204,9 +204,12 @@ hr{
 .font{
     margin: 2px;
 }
-@media (max-width:1080px){
+@media (max-width:1024px){
     .forecastdiv{
         min-width: 110px;
+    }
+    .weather-main{
+        padding: 1px;
     }
 }
 @media (max-width:768px){
